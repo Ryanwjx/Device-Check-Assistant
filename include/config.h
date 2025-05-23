@@ -3,7 +3,7 @@
 
 #include "typedef.h"
 
-#define Config_File_Path "UserInterface/etc/product_assistant/page_info.cfg"
+#define Config_File_Path "/etc/product_assistant/page_info.cfg"
 typedef struct ConfigItem{
 	char name[100];
 	int Index;

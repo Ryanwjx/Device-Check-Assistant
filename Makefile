@@ -17,7 +17,7 @@ export AS LD CC CPP AR NM
 export STRIP OBJCOPY OBJDUMP
 
 CFLAGS := -Wall -O2 -g
-CFLAGS += -I $(shell pwd)/include
+CFLAGS += -I $(shell pwd)/include #-I /usr/include/freetype2
 
 LDFLAGS := -lts -lpthread -lfreetype -lm -lstdc++
 
@@ -29,8 +29,10 @@ export TOPDIR
 TARGET := test
 
 obj-y += main.o
-obj-y += UserInterface/
-obj-y += SystemInterface_AL/
+obj-y += display/
+obj-y += font/
+obj-y += input/
+obj-y += page/
 #obj-y += unitest/
 
 
@@ -44,10 +46,10 @@ $(TARGET) : built-in.o
 	$(CC) -o $(TARGET) built-in.o $(LDFLAGS)
 
 DEVICE_TEST:
-	make -C ./CoreLogic -f $(TOPDIR)/CoreLogic/Makefile
-	
+	make -C ./page/main_page/pagelogic -f $(TOPDIR)/page/main_page/pagelogic/Makefile
 clean:
 	rm -f $(shell find -name "*.o")
+	rm -f $(shell find -name "*.d")
 	rm -f $(TARGET)
 	rm -f $(shell find -name "my_*_test")
 

@@ -11,7 +11,7 @@
 
 #include <stdlib.h>
 
-#include <display_manager.h>
+#include "display_manager.h"
 #include "font_manager.h"
 #include "input_manager.h"
 #include "page_manager.h"
@@ -58,16 +58,13 @@ int main(int argc, char **argv)
 	/* 初始化页面系统 */
 	PageSystemRegister();
 
-	/* 设置当前页面 */
-	ptPage = PageSelect("main");
+	ptPage = PageSelect("main");	/* 设置当前页面 */
 
-	/* 初始化页面结构 */
-	PageInit(ptPage);
+	PageInit(ptPage);	/* 初始化页面结构 */
 
-	/* 页面显示 */
-	PageShow(ptPage);
+	PageShow(ptPage);	/* 页面显示 */
 	
-	/* 本线程开始运行ui程序 */
+	/* 主线程进入页面更新模式 */
 	printf("init ok\n");
 	PageSystemRun();
 	

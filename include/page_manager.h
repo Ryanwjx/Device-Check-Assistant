@@ -2,10 +2,13 @@
 #define _PAGE_MANAGER_H
 
 #include "list.h"
+#include "input_manager.h"
 
 typedef struct{
 	char * PageName;
 	void (*PageInit)(void);
+	void (*PageEventProcess)(InputEvent *ptInputEvent);
+	void (*PageShow)(void);
 	struct list_head UI_Module_list;
 	struct list_head Page_list;
 } Page, * PPage;

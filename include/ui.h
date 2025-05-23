@@ -3,7 +3,6 @@
 
 #include "typedef.h"
 #include "list.h"
-#include "SignalSlotCreateWrapper.h"
 #include <stdbool.h>
 
 #define BUTTON_TYPE 0
