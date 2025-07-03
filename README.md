@@ -10,7 +10,7 @@
 
 # 2. 整体框架
 
-![image-20241028155544350](.\production_assistant\image-20241028155544350.png)
+<img src=".\production_assistant\image-20241028155544350.png" alt="20241028155544350" />
 
 ```
 程序框架分为三部分，输入、显示、页面，分别实现了各自的管理器与子模块
@@ -226,7 +226,7 @@ export PATH=$PATH:/usr/local/arm/gcc-linaro-4.9.4-2017.01-x86_64_arm-linux-gnuea
 
 下述为顶层Makefile、递归调用Makefile.build、底层Makefile，大致配合流程为。
 
-![image-20240905150534500](.\production_assistant\image-20240905150254408.png)
+<img src=".\production_assistant\image-20240905150254408.png" alt="20240905150254408" />
 
 ```
 /* 顶层Makefile */
